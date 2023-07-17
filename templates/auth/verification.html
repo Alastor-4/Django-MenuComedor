@@ -1,0 +1,23 @@
+{% extends 'layouts/auth.html' %}
+
+<!-- Titulo -->
+{% block title %} Registrarse {% endblock title %}
+
+<!-- Encabezado -->
+{% block encabezado %} Revise su correo {% endblock encabezado %}
+
+<!-- AuthForms -->
+{% block authforms %}
+<form id="formAuthentication" class="mb-2" method="POST">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="codigo" class="form-label">Código de verificación</label>
+    {{form.codregistro}}
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-primary d-grid w-100" type="submit">
+      Verificar
+    </button>
+  </div>
+</form>
+{% endblock authforms %}

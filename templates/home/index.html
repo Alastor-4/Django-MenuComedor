@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %} {% load static %}
+
+<!-- Titulo -->
+{% block title %} Menú {% endblock title %}
+
+<!-- Home -->
+{% block content %}
+
+<!-- Si es admin -->
+{% if user.is_superuser %}
+<h1>Hola admin</h1>
+{% else %}
+<!-- Si es profesor -->
+{% if user.is_active %}
+<h1>Hola profesor</h1>
+{% else %}
+<!-- Si es alumno -->
+<div class="container"><h1>Hola estudiante</h1></div>
+{% endif %} {% endif %}
+
+<a type="button" class="btn-primary" href="{% url 'auth_app:auth-logout' %}"
+  >Cerrar sesión</a
+>
+{% endblock content %} {% block js %} {% endblock js %}

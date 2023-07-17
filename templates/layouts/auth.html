@@ -1,0 +1,34 @@
+{% extends './base.html' %} {% load static %}
+<!-- Css -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}" />
+{% endblock css %}
+<!-- Contenido -->
+{% block content %}
+
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Auth -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+            <span class="app-brand-logo demo">
+              <img class="logo" src="{% static 'img/ucf.jpg' %}" alt="" />
+            </span>
+          </div>
+          <!-- /Logo -->
+          <div class="text-center">
+            <h4 class="mb-2">
+              {% block encabezado %} {% endblock encabezado %}
+            </h4>
+          </div>
+          {% block authforms %} {% endblock authforms %}
+        </div>
+      </div>
+      <!-- /Auth -->
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block js %} {% endblock js %}

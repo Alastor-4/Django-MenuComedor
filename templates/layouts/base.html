@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'img/favicon.ico' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/core.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/page-auth.css' %}" /> -->
+    <link rel="stylesheet" href="{% static 'css/theme-default.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonts/boxicons.css' %}" />
+    <title>{% block title %} {% endblock title %}</title>
+    {% block css %} {% endblock css %}
+  </head>
+  <body>
+    {% block content %} {% endblock content %} {% block js %} {% endblock js %}
+
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/helpers.js' %}"></script>
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+  </body>
+</html>
